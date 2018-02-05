@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 			log_in user
 			redirect_to user
 		else 
-			flash.now[:danger]= "Invalid email/password"
+			flash.now[:danger] = 'Invalid email/password'
 			render 'new'
 
 		end
@@ -18,8 +18,6 @@ class SessionsController < ApplicationController
 		log_out
 		redirect_to root_url
 	end
-
-
 
 
 end

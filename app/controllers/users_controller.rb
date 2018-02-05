@@ -13,13 +13,16 @@ class UsersController < ApplicationController
   		flash[:success] = "Bravo"
   		redirect_to @user
   	else
-  		rendez 'new'
+  		render 'new'
   	end
+  end
+
+  def edit 
   end
 
   private
 
   	def user_params
-  		params.require(:user).permit(:email, :password_config)
+  		params.require(:user).permit(:email, :password_confirmation)
 
 end

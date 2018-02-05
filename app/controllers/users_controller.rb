@@ -10,14 +10,21 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
   		log_in @user
-  		flash[:success] = "Bravo"
+  		flash[:success] = 'Bravo'
   		redirect_to @user
   	else
   		render 'new'
   	end
   end
 
-  def edit 
+  def edit
+  @user = User.find(params[:id]) 
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private

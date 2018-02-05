@@ -1,0 +1,9 @@
+<% if @user == current_user %>
+
+<h2>Connecté avec l'adresse <%= @user.email %> </h2>
+
+<% else %>
+
+<h2> Essaie encore </h2>
+
+<% end %>

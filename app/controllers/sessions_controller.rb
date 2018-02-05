@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  	
   	def new
   	end
 
@@ -6,7 +7,7 @@ class SessionsController < ApplicationController
 		user = User.find_by(email: params[:session][:email].downcase)
 		if user && user.authenticate(params[:session][:password])
 			log_in user
-			redirect_to user
+			redirect_to secret_path # créer page secrete, c'est la rediretion directe après le log in
 		else 
 			flash.now[:danger] = 'Invalid email/password'
 			render 'new'
